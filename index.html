@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 max-w-4xl w-full mx-auto my-8">
+
+            <!-- Profile Section -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left mb-10">
+                <img src="https://placehold.co/120x120/a1a1aa/ffffff?text=ME" alt="Profile Picture" class="rounded-full w-24 h-24 sm:w-32 sm:h-32 shadow-lg mb-6 sm:mb-0 sm:mr-8">
+                <div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-indigo-600 mb-2">A Virat</h1>
+                    <p class="text-xl font-semibold text-gray-600 mb-4">Web Developer & Designer</p>
+                    <p class="text-gray-500 max-w-xl">
+                         First-year AI & DS student at MMIT with
+ a strong foundation in Java, C, C++,
+ and HTML. Passionate about problem
+solving, programming, and exploring
+ real-world applications of AI. Eager to
+ gain experience through projects and
+ internship
+                    </p>
+                </div>
+            </div>
+
+            <hr class="border-gray-200 my-8">
+
+            <!-- Skills Section -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-md transition-transform hover:scale-105">
+                        <span class="text-4xl">💻</span>
+                        <h3 class="font-bold mt-2">HTML & CSS</h3>
+                        <p class="text-sm text-gray-500">Semantic markup & modern layouts.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-md transition-transform hover:scale-105">
+                        <span class="text-4xl">🚀</span>
+                        <h3 class="font-bold mt-2">JavaScript</h3>
+                        <p class="text-sm text-gray-500">ES6+, APIs, and interactivity.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-md transition-transform hover:scale-105">
+                        <span class="text-4xl">⚛️</span>
+                        <h3 class="font-bold mt-2">React</h3>
+                        <p class="text-sm text-gray-500">Building dynamic user interfaces.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-md transition-transform hover:scale-105">
+                        <span class="text-4xl">🎨</span>
+                        <h3 class="font-bold mt-2">UI/UX</h3>
+                        <p class="text-sm text-gray-500">Creating intuitive designs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-200 my-8">
+
+            <!-- Contact/Redirect Section -->
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-gray-700 mb-4">Go to a Website</h2>
+                <p class="text-gray-500 mb-6">
+                    Enter any website URL below and click the button to navigate to it.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <input type="text" id="website-input" placeholder="Enter website URL (e.g., google.com)" class="w-full sm:w-auto flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center sm:text-left">
+                    <button id="go-btn" class="w-full sm:w-auto bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors">
+                        Go to Website
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Get the input and button elements
+        const websiteInput = document.getElementById('website-input');
+        const goBtn = document.getElementById('go-btn');
+
+        // Add a click event listener to the button
+        goBtn.addEventListener('click', () => {
+            let url = websiteInput.value.trim();
+
+            // Check if the input is not empty
+            if (url) {
+                // Prepend 'https://' if no protocol is specified
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'https://' + url;
+                }
+                
+                // Redirect the user to the entered URL
+                window.location.href = url;
+            }
+        });
+    </script>
+
+</body>
+</html>
